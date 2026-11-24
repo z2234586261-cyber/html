@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人博客</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#38bdf8',
+                        card: '#1e293b',
+                        dark: '#0f172a',
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+        }
+        body {
+            background-color: #0f172a;
+        }
+    </style>
+</head>
+<body class="bg-dark text-slate-200">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-dark/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary">MyBlog</a>
+            <nav class="hidden md:flex gap-8">
+               
+            </nav>
+            <button class="md:hidden text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 首页Hero -->
+    <section id="home" class="py-24">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="w-48 h-48 rounded-full overflow-hidden border-2 border-primary/60 shadow-lg shadow-primary/20">
+                    <img src="https://picsum.photos/id/1005/400/400" alt="头像" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold text-white">你好，我是一名计算机学习者</h1>
+                    <p class="mt-4 text-slate-400 text-lg max-w-xl">
+                        数据结构
+                    </p>
+                    <div class="mt-6 flex gap-4">
+                        <a href="#projects" class="px-5 py-2 bg-primary text-dark rounded-lg font-medium hover:bg-sky-400 transition">查看项目</a>
+                        <a href="https://github.com/z2234586261-cyber" target="_blank" class="px-5 py-2 border border-primary text-primary rounded-lg hover:bg-primary/10 transition">
+                            <i class="fa-brands fa-github mr-1"></i>GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-20 bg-slate-900/40">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent flex items-center gap-3">
+                <span class="w-10 h-1 bg-primary rounded"></span>关于我
+            </h2>
+            <div class="mt-8 grid md:grid-cols-2 gap-8 text-slate-300">
+                <div>
+                    <p class="leading-relaxed">别让傻子学计算机</p>
+                    <p class="mt-4 leading-relaxed">这个博客用来沉淀学习笔记，存放代码仓库链接，记录刷题、踩坑心得。</p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-3 py-1 bg-slate-800 rounded">C语言</span>
+                    <span class="px-3 py-1 bg-slate-800 rounded">数据结构</span>
+                    <span class="px-3 py-1 bg-slate-800 rounded">Linux</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目作品（美化版数据结构6卡片） -->
+    <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="mb-10">
+                <h2 class="text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent flex items-center gap-3">
+                    <span class="w-10 h-1 bg-primary rounded"></span>数据结构算法练习库
+                </h2>
+                <p class="text-slate-400 mt-3 pl-1">408 数据结构全套代码实现，C语言编写，附带注释、测试用例与思路笔记</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 线性表 -->
+                <div class="bg-card p-6 rounded-xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-sky-500/15">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-sky-500/5 rounded-bl-full"></div>
+                    <h3 class="text-xl font-semibold text-white flex items-center gap-2">
+                        <i class="fa fa-list-ul text-primary"></i>线性表
+                    </h3>
+                    <p class="text-slate-400 mt-3 text-sm leading-relaxed">顺序表、单链表、双向链表、循环链表，增删改查基础操作实现</p>
+                    <div class="flex gap-2 mt-4">
+                        <span class="px-2 py-0.5 bg-blue-900/50 text-blue-300 rounded text-xs">C语言</span>
+                        <span class="px-2 py-0.5 bg-sky-900/50 text-sky-300 rounded text-xs">线性表</span>
+                    </div>
+                    <div class="mt-5">
+                        <a href="https://github.com/z2234586261-cyber/-xianxingbiao" target="_blank" class="inline-flex items-center gap-1 text-primary hover:text-sky-300 transition text-sm">
+                            <i class="fa fa-github"></i>查看源码
+                            <i class="fa fa-external-link text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 栈和队列 -->
+                <div class="bg-card p-6 rounded-xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-sky-500/15">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-sky-500/5 rounded-bl-full"></div>
+                    <h3 class="text-xl font-semibold text-white flex items-center gap-2">
+                        <i class="fa fa-stack-overflow text-primary"></i>栈和队列
+                    </h3>
+                    <p class="text-slate-400 mt-3 text-sm leading-relaxed">顺序栈、链栈、循环队列、链队列；括号匹配、表达式求值实战</p>
+                    <div class="flex gap-2 mt-4">
+                        <span class="px-2 py-0.5 bg-blue-900/50 text-blue-300 rounded text-xs">C语言</span>
+                        <span class="px-2 py-0.5 bg-indigo-900/50 text-indigo-300 rounded text-xs">栈&队列</span>
+                    </div>
+                    <div class="mt-5">
+                        <a href="https://github.com/z2234586261-cyber/ZhanDui" target="_blank" class="inline-flex items-center gap-1 text-primary hover:text-sky-300 transition text-sm">
+                            <i class="fa fa-github"></i>查看源码
+                            <i class="fa fa-external-link text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 树与二叉树 -->
+                <div class="bg-card p-6 rounded-xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-sky-500/15">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-sky-500/5 rounded-bl-full"></div>
+                    <h3 class="text-xl font-semibold text-white flex items-center gap-2">
+                        <i class="fa fa-tree text-primary"></i>树与二叉树
+                    </h3>
+                    <p class="text-slate-400 mt-3 text-sm leading-relaxed">二叉树递归/非递归遍历、线索二叉树、哈夫曼树、二叉搜索树</p>
+                    <div class="flex gap-2 mt-4">
+                        <span class="px-2 py-0.5 bg-blue-900/50 text-blue-300 rounded text-xs">C语言</span>
+                        <span class="px-2 py-0.5 bg-emerald-900/50 text-emerald-300 rounded text-xs">二叉树</span>
+                    </div>
+                    <div class="mt-5">
+                        <a href="https://github.com/你的用户名/仓库名#树与二叉树" target="_blank" class="inline-flex items-center gap-1 text-primary hover:text-sky-300 transition text-sm">
+                            <i class="fa fa-github"></i>查看源码
+                            <i class="fa fa-external-link text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 图 -->
+                <div class="bg-card p-6 rounded-xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-sky-500/15">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-sky-500/5 rounded-bl-full"></div>
+                    <h3 class="text-xl font-semibold text-white flex items-center gap-2">
+                        <i class="fa fa-share-alt text-primary"></i>图
+                    </h3>
+                    <p class="text-slate-400 mt-3 text-sm leading-relaxed">邻接矩阵、邻接表、DFS/BFS、最短路径、最小生成树、拓扑排序</p>
+                    <div class="flex gap-2 mt-4">
+                        <span class="px-2 py-0.5 bg-blue-900/50 text-blue-300 rounded text-xs">C语言</span>
+                        <span class="px-2 py-0.5 bg-orange-900/50 text-orange-300 rounded text-xs">图</span>
+                    </div>
+                    <div class="mt-5">
+                        <a href="https://github.com/你的用户名/仓库名#图" target="_blank" class="inline-flex items-center gap-1 text-primary hover:text-sky-300 transition text-sm">
+                            <i class="fa fa-github"></i>查看源码
+                            <i class="fa fa-external-link text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 查找 -->
+                <div class="bg-card p-6 rounded-xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-sky-500/15">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-sky-500/5 rounded-bl-full"></div>
+                    <h3 class="text-xl font-semibold text-white flex items-center gap-2">
+                        <i class="fa fa-search text-primary"></i>查找
+                    </h3>
+                    <p class="text-slate-400 mt-3 text-sm leading-relaxed">顺序查找、折半查找、B树、B+树、哈希表构造与冲突处理方案</p>
+                    <div class="flex gap-2 mt-4">
+                        <span class="px-2 py-0.5 bg-blue-900/50 text-blue-300 rounded text-xs">C语言</span>
+                        <span class="px-2 py-0.5 bg-pink-900/50 text-pink-300 rounded text-xs">查找</span>
+                    </div>
+                    <div class="mt-5">
+                        <a href="https://github.com/你的用户名/仓库名#查找" target="_blank" class="inline-flex items-center gap-1 text-primary hover:text-sky-300 transition text-sm">
+                            <i class="fa fa-github"></i>查看源码
+                            <i class="fa fa-external-link text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 排序 -->
+                <div class="bg-card p-6 rounded-xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-sky-500/15">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-sky-500/5 rounded-bl-full"></div>
+                    <h3 class="text-xl font-semibold text-white flex items-center gap-2">
+                        <i class="fa fa-sort text-primary"></i>排序
+                    </h3>
+                    <p class="text-slate-400 mt-3 text-sm leading-relaxed">插入、交换、选择、归并、基数排序，附带时间空间复杂度对比</p>
+                    <div class="flex gap-2 mt-4">
+                        <span class="px-2 py-0.5 bg-blue-900/50 text-blue-300 rounded text-xs">C语言</span>
+                        <span class="px-2 py-0.5 bg-teal-900/50 text-teal-300 rounded text-xs">排序</span>
+                    </div>
+                    <div class="mt-5">
+                        <a href="https://github.com/你的用户名/仓库名#排序" target="_blank" class="inline-flex items-center gap-1 text-primary hover:text-sky-300 transition text-sm">
+                            <i class="fa fa-github"></i>查看源码
+                            <i class="fa fa-external-link text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 随笔板块 -->
+    <section id="articles" class="py-20 bg-slate-900/40">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent flex items-center gap-3">
+                <span class="w-10 h-1 bg-primary rounded"></span>学习随笔
+            </h2>
+            <div class="mt-8 space-y-5">
+                <div class="bg-card p-5 rounded-xl hover:bg-slate-800/60 transition">
+                    <a href="#" class="block">
+                        <h3 class="text-lg text-white hover:text-primary">PyInstaller打包Playwright避坑记录</h3>
+                        <p class="text-slate-400 text-sm mt-2">打包无Python环境Windows程序，路径与依赖问题解决办法</p>
+                        <div class="text-xs text-slate-500 mt-3">2026-07-02</div>
+                    </a>
+                </div>
+                <div class="bg-card p-5 rounded-xl hover:bg-slate-800/60 transition">
+                    <a href="#" class="block">
+                        <h3 class="text-lg text-white hover:text-primary">正则表达式非贪婪匹配与排除字符讲解</h3>
+                        <p class="text-slate-400 text-sm mt-2">.*? 和 [^...] 底层匹配逻辑，搭配爬虫实战案例</p>
+                        <div class="text-xs text-slate-500 mt-3">2026-07-02</div>
+                    </a>
+                </div>
+                <div class="bg-card p-5 rounded-xl hover:bg-slate-800/60 transition">
+                    <a href="#" class="block">
+                        <h3 class="text-lg text-white hover:text-primary">408数据结构复习思路梳理</h3>
+                        <p class="text-slate-400 text-sm mt-2">线性表到排序整套复习顺序、刷题建议</p>
+                        <div class="text-xs text-slate-500 mt-3">2026-08-10</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系 -->
+    <section id="contact" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent flex items-center gap-3">
+                <span class="w-10 h-1 bg-primary rounded"></span>联系我
+            </h2>
+            <div class="mt-8 flex flex-wrap gap-6">
+                <a href="https://github.com/你的用户名" target="_blank" class="flex items-center gap-2 text-slate-300 hover:text-primary transition text-lg">
+                    <i class="fa-brands fa-github text-2xl"></i> GitHub
+                </a>
+                <a href="mailto:xxx@xxx.com" class="flex items-center gap-2 text-slate-300 hover:text-primary transition text-lg">
+                    <i class="fa-solid fa-envelope text-2xl"></i> Email
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="py-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>© 2026 MyBlog | Powered by Tailwind CSS & GitHub Pages</p>
+        </div>
+    </footer>
+
+    <!-- 简单平滑滚动 -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+<!-- （注：内容由AI生成） -->
